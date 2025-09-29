@@ -155,7 +155,7 @@ function seletorPagina() {
   // ===== PÃGINA 0: TELA INICIAL =====
   if (paginaAtual === 0) {
     resultadoFinal = 0; // Zera o resultado (para quando reinicia)
-    enunciadoPrincipal.innerHTML = `OlÃ¡! Vamos calcular sua pegada ecolÃ³gica? `; // Mensagem de boas-vindas
+    enunciadoPrincipal.innerHTML = `Olá! Vamos calcular sua pegada ecológica? `; // Mensagem de boas-vindas
     botaoPrincipal.innerHTML = "Iniciar"; // Texto do botÃ£o
 
     // ===== PÃGINA 1: PERGUNTA DO NOME =====
@@ -169,7 +169,7 @@ function seletorPagina() {
 
     // ===== PÃGINA 2: PERGUNTA SOBRE CONSUMO DE CARNE =====
   } else if (paginaAtual === 2) {
-    enunciadoPrincipal.innerHTML = `${nome}, com que frequÃªncia vocÃª consome produtos de origem animal?`; // Pergunta personalizada com o nome
+    enunciadoPrincipal.innerHTML = `${nome}, com que frequência você consome produtos de origem animal?`; // Pergunta personalizada com o nome
     inputRange.value = "50"; // Define a barra no meio (50%)
     labelRange.innerHTML = "50%"; // Mostra 50% no texto
     enunciadoPrincipal.appendChild(inputRange); // Adiciona a barra na tela
@@ -180,7 +180,7 @@ function seletorPagina() {
   } else if (paginaAtual === 3) {
     inputRange.value = "50"; // Reseta a barra para 50%
     labelRange.innerHTML = "50%";
-    enunciadoPrincipal.innerHTML = `${nome}, dos alimentos que consome, qual a percentagem de comida nÃ£o processada, nÃ£o embalada ou cultivada localmente?`;
+    enunciadoPrincipal.innerHTML = `${nome}, dos alimentos que consome, qual a percentagem de comida não processada, não embalada ou cultivada localmente?`;
     enunciadoPrincipal.appendChild(inputRange); // Reutiliza a mesma barra deslizante
     enunciadoPrincipal.appendChild(labelRange);
     botaoPrincipal.innerHTML = "Continuar";
@@ -195,7 +195,7 @@ function seletorPagina() {
 
     // ===== PÃGINA 5: PERGUNTA SOBRE ENERGIA ELÃ‰TRICA =====
   } else if (paginaAtual === 5) {
-    enunciadoPrincipal.innerHTML = `${nome}, vocÃª tem energia elÃ©trica em casa?`;
+    enunciadoPrincipal.innerHTML = `${nome}, você tem energia elétrica em casa?`;
 
     // Montando a estrutura dos botÃµes de rÃ¡dio (Sim/NÃ£o)
     enunciadoPrincipal.appendChild(inputBox); // Caixa principal
@@ -211,7 +211,7 @@ function seletorPagina() {
 
     // ===== PÃGINA 6: PERGUNTA SOBRE VIAGENS DE AVIÃƒO =====
   } else if (paginaAtual === 6) {
-    enunciadoPrincipal.innerHTML = `${nome}, com que frequÃªncia viaja de aviÃ£o anualmente?`;
+    enunciadoPrincipal.innerHTML = `${nome}, com que frequência viaja de avião anualmente?`;
     inputRange.value = "50"; // Reseta a barra para 50%
     labelRange.innerHTML = "50%";
     enunciadoPrincipal.appendChild(inputRange); // Reutiliza a barra deslizante
@@ -223,19 +223,19 @@ function seletorPagina() {
     calculaResultado(); // Chama a funÃ§Ã£o que faz os cÃ¡lculos
 
     // Montando a tela de resultado
-    enunciadoPrincipal.innerHTML = `<p class="descricao-resultado">Aqui estÃ¡ sua pegada ecolÃ³gica, ${nome}!</p>`;
+    enunciadoPrincipal.innerHTML = `<p class="descricao-resultado">Aqui está sua pegada ecológica, ${nome}!</p>`;
     enunciadoPrincipal.appendChild(divResultado); // Adiciona a div do resultado
     divResultado.appendChild(imgResultado); // Adiciona a imagem dos planetas
     divResultado.appendChild(textoResultado); // Adiciona o texto com o nÃºmero
     textoResultado.innerHTML = `${qtdPlanetas} planetas.`; // Mostra quantos planetas
 
     // Adiciona textos explicativos
-    enunciadoPrincipal.innerHTML += `<p class="descricao-resultado">Como seria se todos no mundo vivessem como vocÃª?</p>`;
-    enunciadoPrincipal.innerHTML += `<p class="descricao-resultado">VocÃª demorou ${adicionaZeroTempo(
+    enunciadoPrincipal.innerHTML += `<p class="descricao-resultado">Como seria se todos no mundo vivessem como você?</p>`;
+    enunciadoPrincipal.innerHTML += `<p class="descricao-resultado">Você demorou ${adicionaZeroTempo(
       timer.getMinutes() // Pega os minutos do timer
     )}:${adicionaZeroTempo(
       timer.getSeconds() // Pega os segundos do timer
-    )}s para responder esse questionÃ¡rio.</p>`;
+    )}s para responder esse questionário.</p>`;
 
     botaoPrincipal.innerHTML = "Refazer"; // BotÃ£o para recomeÃ§ar
     enunciadoPrincipal.style.width = "100%"; // Ajusta a largura
